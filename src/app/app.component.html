@@ -1,0 +1,29 @@
+<div class="container todo">
+    <h2>{{ title }}</h2>
+    <div class="input-group mb-3 ">
+        <input  type="text" 
+                class="form-control" 
+                placeholder="Пожалуйста напишите что нибудь здесь!!!" 
+                aria-label="You'r text" 
+                aria-describedby="button-addon2"
+                #inputItame 
+                (keyup.enter)="addtask(inputItame)" 
+                >
+        <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="addtask(inputItame)">Button</button>
+        </div>
+    </div>
+    <div class="container">
+            <p *ngIf= "addtasks"
+            >Текст не должен быть пустым!!!</p>
+        <ul class="list-group" 
+            *ngFor="let todo of todoss; let i = index">
+            <li class="list-group-item">
+                {{ todo }} 
+                <button type="button" class="btn btn-outline-dark delbtn" (click)="deltask(i)">Delete</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

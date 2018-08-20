@@ -1,0 +1,13 @@
+.todo{
+    margin-top: 50px; 
+}
+
+h2{
+    text-align: center;
+}
+.list-group-item{
+    width: 100%;
+}
+.delbtn{
+    float: right;
+}
